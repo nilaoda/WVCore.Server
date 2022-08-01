@@ -1,6 +1,19 @@
 # WVCore.Server
 Tiny Server. Example of [WVCore](https://github.com/nilaoda/WVCore) Api.
 
+# Complie
+
+* Native AOT
+```
+dotnet publish -r win-x64 -c Release
+```
+
+* Normal
+```
+del Directory.Build.props
+dotnet publish -r win-x64 -c Release
+```
+
 # Api
 
 ## `/wvapi` 
