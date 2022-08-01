@@ -1,0 +1,53 @@
+﻿<Directives>
+	<Application>
+		<Assembly Name="WVCore.Server" Dynamic="Required All"/>
+		<Assembly Name="WVCore" Dynamic="Required All"/>
+		<Assembly Name="NLog" Dynamic="Required All"/>
+		<Assembly Name="protobuf-net.Core" Dynamic="Required All">
+			<Type Name="ProtoBuf.Serializers.RepeatedSerializer" Dynamic="Required All">
+				<Method Name="CreateList" Dynamic="Required">
+					<GenericArgument Name="NameValue,WVCore" />
+				</Method>
+				<Method Name="CreateList" Dynamic="Required">
+					<GenericArgument Name="Signature,WVCore" />
+				</Method>
+				<Method Name="CreateList" Dynamic="Required">
+					<GenericArgument Name="KeyContainer,WVCore" />
+				</Method>
+				<Method Name="CreateList" Dynamic="Required">
+					<GenericArgument Name="VideoResolutionConstraint,WVCore" />
+				</Method>
+				<Method Name="CreateList" Dynamic="Required">
+					<GenericArgument Name="System.Byte[],System.Private.CoreLib" />
+				</Method>
+			</Type>
+		</Assembly>
+		<Assembly Name="protobuf-net" Dynamic="Required All">
+			<Type Name="ProtoBuf.Serializer" Dynamic="Required All">
+				<Method Name="Serialize" Dynamic="Required">
+					<GenericArgument Name="LicenseRequest,WVCore" />
+					<Parameter Name="System.IO.Stream, System.Private.CoreLib" />
+					<Parameter Name="LicenseRequest,WVCore" />
+				</Method>
+			</Type>
+		</Assembly>
+		<Assembly Name="System.Private.Xml">
+			<Type Name="System.Xml.Serialization.IXmlSerializable" Dynamic="Required All">
+			</Type>
+		</Assembly>
+		<Assembly Name="System.Private.CoreLib">
+			<Type Name="System.ComponentModel.DefaultValueAttribute" Dynamic="Required All">
+				<Method Name=".ctor" Dynamic="Required">
+					<Parameter Name="System.Int32, System.Private.CoreLib" />
+				</Method>
+			</Type>
+		</Assembly>
+		<Assembly Name="BouncyCastle.Crypto" Dynamic="Required All">
+			<Type Name="Org.BouncyCastle.Security.DigestUtilities+DigestAlgorithm[]" Dynamic="Required All"/>
+		</Assembly>
+		<Assembly Name="System.Text.Json" Dynamic="Required All" />
+		<Assembly Name="Microsoft.AspNetCore">
+			<Type Name="Microsoft.AspNetCore.Builder.WebApplicationBuilder" Dynamic="Required All" />
+		</Assembly>
+	</Application>
+</Directives>
